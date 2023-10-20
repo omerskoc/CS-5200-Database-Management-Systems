@@ -1,0 +1,31 @@
+<!ELEMENT Publications (Article+)>
+<!ELEMENT Article (PubDetails)>
+<!ATTLIST Article PMID CDATA #REQUIRED>
+<!ELEMENT PubDetails (Journal, ArticleTitle, AuthorList)>
+<!ELEMENT ArticleTitle (#PCDATA)>
+<!ELEMENT AuthorList (Author+) >
+<!ATTLIST AuthorList CompleteYN (Y|N) "Y" >
+<!ELEMENT Author (((LastName, ForeName?, Initials?, Suffix?) | CollectiveName), AffiliationInfo*) >
+<!ATTLIST Author ValidYN (Y | N) "Y"  >
+<!ELEMENT LastName (#PCDATA) >
+<!ELEMENT ForeName (#PCDATA) >
+<!ELEMENT Initials (#PCDATA) >
+<!ELEMENT Suffix (#PCDATA) >
+<!ELEMENT CollectiveName (#PCDATA) >
+<!ELEMENT AffiliationInfo (Affiliation)>
+<!ELEMENT Affiliation (#PCDATA)>
+<!ELEMENT Journal (ISSN?, JournalIssue, Title?, ISOAbbreviation?)>
+<!ELEMENT ISSN (#PCDATA) >
+<!ATTLIST ISSN IssnType  (Electronic | Print) #REQUIRED >
+<!ELEMENT Title (#PCDATA) >
+<!ELEMENT ISOAbbreviation (#PCDATA) >
+<!ELEMENT JournalIssue (Volume?, Issue?, PubDate) >
+<!ATTLIST JournalIssue CitedMedium (Internet | Print) #REQUIRED >
+<!ELEMENT Volume (#PCDATA) >
+<!ELEMENT Issue (#PCDATA) >
+<!ELEMENT PubDate ((Year, ((Month, Day?) | Season)?) | MedlineDate) >
+<!ELEMENT Year (#PCDATA) >
+<!ELEMENT Month (#PCDATA) >
+<!ELEMENT Day (#PCDATA )>
+<!ELEMENT Season (#PCDATA )>
+<!ELEMENT MedlineDate (#PCDATA) >
